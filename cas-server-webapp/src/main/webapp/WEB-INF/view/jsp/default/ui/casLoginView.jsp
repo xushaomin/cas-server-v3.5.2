@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>广联赛讯运营平台</title>
+	<title>运营平台</title>
 	<link href='<c:url value="css/login.css" />' rel="stylesheet" type="text/css">
 	
 	<script type="text/javascript" src='<c:url value="js/jquery-1.8.3.min.js" />' /></script>
@@ -32,7 +32,7 @@
 <div class="login_warp">
     <!-- start of 登录 -->
     <div class="login_con">
-        <div class="login_top"><h1 class="login_tit">广联支撑平台</h1></div>
+        <div class="login_top"><h1 class="login_tit">支撑平台</h1></div>
         <div class="login_mod">
             <form:form method="post" id="fm1" cssClass="fm-v clearfix login_form" commandName="${commandName}" htmlEscape="true">
                 <p>
