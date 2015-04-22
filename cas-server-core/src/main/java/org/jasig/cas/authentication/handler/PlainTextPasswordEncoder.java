@@ -31,4 +31,11 @@ public final class PlainTextPasswordEncoder implements PasswordEncoder {
     public String encode(final String password) {
         return password;
     }
+
+	@Override
+	public String encode(String password, String salt) {
+		return password;
+	}
+    
+    
 }

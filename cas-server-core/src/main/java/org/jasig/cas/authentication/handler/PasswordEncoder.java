@@ -44,4 +44,13 @@ public interface PasswordEncoder {
      * @return the transformed version of the password
      */
     String encode(String password);
+    
+    /**
+     * Method that actually performs the transformation of the plaintext
+     * password into the encrypted password.
+     * 
+     * @param password the password to translate
+     * @return the transformed version of the password
+     */
+    String encode(String password, String salt);
 }

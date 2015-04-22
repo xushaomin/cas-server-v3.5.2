@@ -33,4 +33,11 @@ public final class DesPasswordEncoder implements PasswordEncoder {
     public String encode(final String password) {
         return DES.encrypt(password);
     }
+
+	@Override
+	public String encode(String password, String salt) {
+		return this.encode(password);
+	}
+    
+    
 }

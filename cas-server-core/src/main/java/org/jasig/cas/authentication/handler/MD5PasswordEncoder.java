@@ -14,4 +14,12 @@ public class MD5PasswordEncoder implements PasswordEncoder {
 		String strPassMD5 = Md5Encrypt.md5(strSource);
 		return strPassMD5;
 	}
+
+	@Override
+	public String encode(String strSource, String salt) {
+		String strPassMD5 = Md5Encrypt.md5(this.encode(strSource) + salt);
+		return strPassMD5;
+	}
+	
+	
 }

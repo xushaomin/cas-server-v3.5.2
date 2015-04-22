@@ -93,4 +93,11 @@ public final class DefaultPasswordEncoder implements PasswordEncoder {
     public final void setCharacterEncoding(final String characterEncoding) {
         this.characterEncoding = characterEncoding;
     }
+
+	@Override
+	public String encode(String password, String salt) {
+		return this.encode(password);
+	}
+    
+    
 }
