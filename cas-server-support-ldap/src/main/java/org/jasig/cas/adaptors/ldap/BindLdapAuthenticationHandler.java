@@ -89,8 +89,8 @@ public class BindLdapAuthenticationHandler extends AbstractLdapUsernamePasswordA
         final String filter = LdapUtils.getFilterWithValues(getFilter(), transformedUsername);
         this.getLdapTemplate().search(
             new SearchExecutor() {
-
-                public NamingEnumeration executeSearch(final DirContext context) throws NamingException {
+                @SuppressWarnings("rawtypes")
+				public NamingEnumeration executeSearch(final DirContext context) throws NamingException {
                     return context.search(base, filter, searchControls);
                 }
             },

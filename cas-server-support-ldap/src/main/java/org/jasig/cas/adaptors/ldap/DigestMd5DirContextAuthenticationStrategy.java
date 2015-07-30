@@ -52,7 +52,7 @@ public class DigestMd5DirContextAuthenticationStrategy
 
 
     /** {@inheritDoc} */
-    @SuppressWarnings(value = "unchecked")
+    @SuppressWarnings(value = { "unchecked", "rawtypes" })
     public void setupEnvironment(
         final Hashtable env,
         final String userDn,

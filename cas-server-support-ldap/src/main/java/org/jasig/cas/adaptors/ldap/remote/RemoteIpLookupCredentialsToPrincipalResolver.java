@@ -57,7 +57,8 @@ public final class RemoteIpLookupCredentialsToPrincipalResolver extends Abstract
     @NotNull
     private String ipAddressFormat = ADDR_STANDARD;
 
-    protected String extractPrincipalId(final Credentials credentials) {
+    @SuppressWarnings("rawtypes")
+	protected String extractPrincipalId(final Credentials credentials) {
         final RemoteAddressCredentials c = (RemoteAddressCredentials) credentials;
         final String formattedIpAddress = getFormattedIpAddress(c.getRemoteAddress().trim());      
         

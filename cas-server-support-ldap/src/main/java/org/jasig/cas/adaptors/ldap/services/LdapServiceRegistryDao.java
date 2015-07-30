@@ -96,7 +96,8 @@ public final class LdapServiceRegistryDao implements ServiceRegistryDao {
         return dn == null ? null : (DirContextAdapter) this.ldapTemplate.lookup(dn);
     }
 
-    protected String findDn(final String filter) {
+    @SuppressWarnings("rawtypes")
+	protected String findDn(final String filter) {
         final List results = this.ldapTemplate.search(this.serviceBaseDn, filter, SearchControls.SUBTREE_SCOPE, new String[0], new ContextMapper() {
             public Object mapFromContext(final Object ctx) {
                 return ((DirContextAdapter) ctx).getNameInNamespace();
@@ -122,7 +123,8 @@ public final class LdapServiceRegistryDao implements ServiceRegistryDao {
         }
     }
 
-    public List<RegisteredService> load() {
+    @SuppressWarnings("unchecked")
+	public List<RegisteredService> load() {
         try {
             return this.ldapTemplate.search(this.serviceBaseDn, this.ldapServiceMapper.getLoadFilter().encode(), this.cachedSearchControls, this.ldapServiceMapper);
         } catch (final Exception e) {
