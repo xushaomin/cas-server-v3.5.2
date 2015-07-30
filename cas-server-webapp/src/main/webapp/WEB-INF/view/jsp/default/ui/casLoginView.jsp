@@ -40,23 +40,20 @@
 						<strong>${sessionScope.openIdLocalId}</strong>
 						<input type="hidden" id="username" name="username" value="${sessionScope.openIdLocalId}" />
 					</c:if>
-	
 					<c:if test="${empty sessionScope.openIdLocalId}">
-						<spring:message code="screen.welcome.label.netid.accesskey" var="userNameAccessKey" />
 						<form:input name="username" id="username" cssClass="required in_text auto_hint" tabindex="1" accesskey="${userNameAccessKey}" path="username" autocomplete="false" htmlEscape="true" value="${credentials.username}" />
 					</c:if>
                 </p>
                 <p>
-              		<spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
 					<form:password name="password" id="password" path="password" size="25" tabindex="2" cssClass="in_text" accesskey="${passwordAccessKey}" htmlEscape="true" autocomplete="off" />
                 </p>
                 <p>
-                    <input name="j_captcha_response" class="in_text auto_hint" type="text" style="width:211px;">
-                    <span class="code"><img src="captcha.htm"></span>
-                    <span class="tips clearfix"><em class="right"><a href="#" onclick="javascript:window.location.reload();">看不清楚？换一个</a></em>按右图填写，不区分大小写</span>
+					<input name="j_captcha_response" class="in_text auto_hint" type="text" style="width:211px;">
+					<span class="code"><img src="captcha.htm"></span>
+					<span class="tips clearfix"><em class="right"><a href="#" onclick="javascript:window.location.reload();">看不清楚？换一个</a></em>按右图填写，不区分大小写</span>
                 </p>
                 <p class="loginMsg" id="loginMsg">
-                	<form:errors path="*" id="msg" cssClass="errors" element="span" value="请输入用户名和密码" />
+					<form:errors path="*" id="msg" cssClass="errors" element="span" value="请输入用户名和密码" />
                 </p>
                 <p>
                 	<input type="hidden" name="lt" value="${loginTicket}" />
