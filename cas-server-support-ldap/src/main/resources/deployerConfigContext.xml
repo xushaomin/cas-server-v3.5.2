@@ -110,9 +110,7 @@
 					class="org.jasig.cas.adaptors.ldap.BindLdapAuthenticationHandler">
 					<property name="filter" value="uid=%u" />
 					<property name="searchBase" value="ou=people,dc=rutgers,dc=edu" /> 
-					<property
-						name="contextSource"
-						ref="contextSource" />
+					<property name="contextSource" ref="contextSource" />
 				</bean>
 			</list>
 		</property>
@@ -132,14 +130,14 @@
 		<property name="baseEnvironmentProperties">
 			<map>
 				<entry>
-				        <key><value>java.naming.security.protocol</value></key>
-        				<value>ssl</value>
-        			</entry>
+					<key><value>java.naming.security.protocol</value></key>
+        			<value>ssl</value>
+        		</entry>
 				<entry>
-				        <key><value>java.naming.security.authentication</value></key>
-        				<value>simple</value>
-        			</entry>
-        		</map>
+					<key><value>java.naming.security.authentication</value></key>
+        			<value>simple</value>
+        		</entry>
+        	</map>
 		</property>
 	</bean>				
 </beans>
