@@ -69,7 +69,8 @@ public final class CredentialsToLDAPAttributePrincipalResolver extends AbstractL
         return ldapPrincipal;
     }
 
-    private String resolveFromLDAP(final String lookupAttributeValue) {
+    @SuppressWarnings("rawtypes")
+	private String resolveFromLDAP(final String lookupAttributeValue) {
         final String searchFilter = LdapUtils.getFilterWithValues(getFilter(),
             lookupAttributeValue);
 
