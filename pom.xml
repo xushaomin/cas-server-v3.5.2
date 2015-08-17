@@ -304,6 +304,7 @@
 					</archive>
 				</configuration>
 			</plugin>
+			<!-- 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -314,7 +315,7 @@
 					</descriptors>
 				</configuration>
 			</plugin>
-			<!-- 
+			
 			<plugin> 
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId> 
@@ -463,14 +464,14 @@
 		<repository>
 			<id>jasig-repository</id>
 			<name>Jasig Maven2 Repository</name>
-			<url>http://developer.ja-sig.org/maven2</url>
+			<url>http://mvnrepo.appleframework.com/nexus/content/groups/public/</url>
 		</repository>
 
 		<repository>
 			<id>jboss</id>
 			<name>JBoss Repository</name>
 			<layout>default</layout>
-			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+			<url>http://mvnrepo.appleframework.com/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
 
@@ -794,13 +795,17 @@
 				<version>${config.version}</version>
 			</dependency>
 			
-			<!-- 
 			<dependency>
-				<groupId>com.appleframework.config</groupId>
+				<groupId>com.appleframework.boot</groupId>
+				<artifactId>apple-boot-tomcat</artifactId>
+				<version>${boot.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.appleframework.boot</groupId>
 				<artifactId>apple-boot-jetty</artifactId>
 				<version>${boot.version}</version>
 			</dependency>
-			 -->
 			 
 		</dependencies>
 	</dependencyManagement>
@@ -886,6 +891,7 @@
 							</execution>
 						</executions>
 					</plugin>
+					<!-- 
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -904,6 +910,7 @@
 							</execution>
 						</executions>
 					</plugin>
+					 -->
 				</plugins>
 			</build>
 		</profile>
@@ -937,22 +944,23 @@
 		<ehcache.version>2.6.0</ehcache.version>
 		<hsqldb.version>2.0.0</hsqldb.version>
 		<joda-time.version>2.1</joda-time.version>
-		<config.version>0.1.1.RELEASE</config.version>
-		<boot.version>0.1.1.RELEASE</boot.version>
+		<config.version>0.1.2.RELEASE</config.version>
+		<boot.version>0.1.6.RELEASE</boot.version>
 	</properties>
 	
 	<distributionManagement>
 		<repository>
-			<id>apple-releases</id>
-			<name>Apple Releases Repository</name>
+			<id>nexus-releases</id>
+			<name>Nexus Releases Repository</name>
 			<url>http://mvnrepo.appleframework.com/nexus/content/repositories/releases</url>
 		</repository>
 
 		<snapshotRepository>
-			<id>apple-snapshots</id>
-			<name>Apple Snapshots Repository</name>
+			<id>nexus-snapshots</id>
+			<name>Nexus Snapshots Repository</name>
 			<url>http://mvnrepo.appleframework.com/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
 	
 </project>

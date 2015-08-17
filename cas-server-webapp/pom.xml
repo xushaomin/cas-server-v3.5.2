@@ -19,14 +19,13 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>cas-server-webapp</artifactId>
-	<packaging>war</packaging>
 	<name>Jasig CAS Web Application</name>
 	<dependencies>
 
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
-			<version>${mockito.version}</version>
+			<version>1.9.0-rc1</version>
 			<scope>test</scope>
 			<type>jar</type>
 		</dependency>
@@ -214,10 +213,16 @@
 			<artifactId>apple-config-diamond</artifactId>
 		</dependency>
 		
+		<dependency>
+			<groupId>com.appleframework.boot</groupId>
+			<artifactId>apple-boot-jetty</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -248,11 +253,34 @@
 					</execution>
 				</executions>
 				<configuration>
-					<!-- <messagesDirectory>${basedir}/src/main/webapp/WEB-INF/classes/</messagesDirectory> -->
 					<messagesDirectory>${basedir}/src/main/resources/</messagesDirectory>
 					<mainMessagesFile>messages_zh_CN.properties</mainMessagesFile>
 				</configuration>
 			</plugin>
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>  
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptor>src/main/assembly/assembly.xml</descriptor>
+                </configuration>
+                <executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+            </plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
