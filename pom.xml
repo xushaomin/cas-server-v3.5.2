@@ -944,8 +944,8 @@
 		<ehcache.version>2.6.0</ehcache.version>
 		<hsqldb.version>2.0.0</hsqldb.version>
 		<joda-time.version>2.1</joda-time.version>
-		<config.version>0.1.2.RELEASE</config.version>
-		<boot.version>0.1.6.RELEASE</boot.version>
+		<config.version>0.1.8.RELEASE</config.version>
+		<boot.version>0.2.8.RELEASE</boot.version>
 	</properties>
 	
 	<distributionManagement>
